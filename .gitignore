@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production build
+dist/
+dist-ssr/
+*.local
+
+# Environment variables
+.env
+.env.*
+
+# Editor and OS
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+
+# Test artifacts & reports
+lighthouse_report*.json
+*.png
+!public/assets/*.png
+verify_*.py
+_legacy_honeypot/
+
+.vercel
