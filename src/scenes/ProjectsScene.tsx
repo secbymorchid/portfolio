@@ -43,7 +43,7 @@ export const ProjectsScene: React.FC<ProjectsSceneProps> = ({ onBackToStudy }) =
       <div className="scene-vignette" />
 
       {/* Top Header Bar */}
-      <header className="relative z-30 flex flex-col sm:flex-row sm:items-center justify-between p-4 sm:p-6 md:p-8 border-b border-brass/25 bg-walnut/70 backdrop-blur-sm gap-4">
+      <header className="relative z-30 flex flex-row items-center justify-between p-3 sm:p-6 md:p-8 border-b border-brass/25 bg-walnut/70 backdrop-blur-sm gap-2">
         {/* Back to the Study Brass Button */}
         <BrassButton
           variant="outline"
@@ -52,23 +52,24 @@ export const ProjectsScene: React.FC<ProjectsSceneProps> = ({ onBackToStudy }) =
           onClick={onBackToStudy}
           aria-label="Return to the study"
         >
-          Back to the study
+          <span className="hidden sm:inline">Back to the study</span>
+          <span className="sm:hidden">Study</span>
         </BrassButton>
 
         {/* Title Heading */}
-        <div className="text-left sm:text-right">
-          <div className="flex items-center sm:justify-end gap-2 text-brass font-mono text-xs uppercase tracking-widest font-bold">
-            <Briefcase className="w-3.5 h-3.5" />
+        <div className="text-right">
+          <div className="flex items-center justify-end gap-1.5 sm:gap-2 text-brass font-mono text-[10px] sm:text-xs uppercase tracking-widest font-bold">
+            <Briefcase className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
             <span>01 · Projects</span>
           </div>
-          <h1 className="font-cormorant text-2xl sm:text-3xl font-bold text-parchment">
+          <h1 className="font-cormorant text-xl sm:text-2xl md:text-3xl font-bold text-parchment leading-tight">
             Projects &amp; Tooling
           </h1>
         </div>
       </header>
 
       {/* Central Stage: Open Briefcase Container */}
-      <main className="relative z-20 flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 md:p-8 flex flex-col justify-center">
+      <main className="relative z-20 flex-1 max-w-7xl w-full mx-auto p-2.5 sm:p-6 md:p-8 flex flex-col justify-center">
         {/* Case Open Frame & Archival Card Grid */}
         <div className="relative rounded-lg p-3 sm:p-6 md:p-8 bg-walnut/90 border border-brass/40 shadow-2xl overflow-hidden">
           {/* Subtle Leather Texture Background Inside Briefcase */}
@@ -77,12 +78,12 @@ export const ProjectsScene: React.FC<ProjectsSceneProps> = ({ onBackToStudy }) =
           </div>
 
           {/* Brass Case Interior Header */}
-          <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between border-b border-brass/30 pb-4 mb-6 gap-2">
+          <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between border-b border-brass/30 pb-3 mb-4 sm:mb-6 gap-2">
             <div>
-              <span className="font-mono text-xs uppercase tracking-widest text-brass">
+              <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-brass font-bold">
                 PROJECTS
               </span>
-              <p className="font-serif italic text-sm text-parchment/80">
+              <p className="font-serif italic text-xs sm:text-sm text-parchment/80">
                 Security tooling, automated pipelines, and technical labs.
               </p>
             </div>
@@ -90,7 +91,7 @@ export const ProjectsScene: React.FC<ProjectsSceneProps> = ({ onBackToStudy }) =
               href="https://github.com/secbymorchid"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-mono text-xs text-brass-light hover:underline shrink-0"
+              className="inline-flex items-center gap-1.5 font-mono text-[11px] sm:text-xs text-brass-light hover:underline shrink-0"
             >
               <span>Explore all on GitHub</span>
               <ExternalLink className="w-3.5 h-3.5" />
@@ -98,7 +99,7 @@ export const ProjectsScene: React.FC<ProjectsSceneProps> = ({ onBackToStudy }) =
           </div>
 
           {/* Dossier Grid with Staggered Entrance */}
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-h-[64vh] overflow-y-auto pr-1">
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-5 max-h-[64vh] overflow-y-auto pr-1">
             {PROJECTS.map((project, idx) => (
               <motion.div
                 key={project.id}

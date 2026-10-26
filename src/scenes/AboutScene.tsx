@@ -24,7 +24,7 @@ export const AboutScene: React.FC<AboutSceneProps> = ({ onBackToStudy }) => {
       <div className="scene-vignette" />
 
       {/* Top Header Bar */}
-      <header className="relative z-30 flex flex-col sm:flex-row sm:items-center justify-between p-4 sm:p-6 md:p-8 border-b border-brass/25 bg-walnut/70 backdrop-blur-sm gap-4">
+      <header className="relative z-30 flex flex-row items-center justify-between p-3 sm:p-6 md:p-8 border-b border-brass/25 bg-walnut/70 backdrop-blur-sm gap-2">
         <BrassButton
           variant="outline"
           size="md"
@@ -32,72 +32,73 @@ export const AboutScene: React.FC<AboutSceneProps> = ({ onBackToStudy }) => {
           onClick={onBackToStudy}
           aria-label="Return to the study"
         >
-          Back to the study
+          <span className="hidden sm:inline">Back to the study</span>
+          <span className="sm:hidden">Study</span>
         </BrassButton>
 
-        <div className="text-left sm:text-right">
-          <div className="flex items-center sm:justify-end gap-2 text-brass font-mono text-xs uppercase tracking-widest font-bold">
-            <Award className="w-3.5 h-3.5" />
+        <div className="text-right">
+          <div className="flex items-center justify-end gap-1.5 sm:gap-2 text-brass font-mono text-[10px] sm:text-xs uppercase tracking-widest font-bold">
+            <Award className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
             <span>02 · About</span>
           </div>
-          <h1 className="font-cormorant text-2xl sm:text-3xl font-bold text-parchment">
+          <h1 className="font-cormorant text-xl sm:text-2xl md:text-3xl font-bold text-parchment leading-tight">
             About
           </h1>
         </div>
       </header>
 
       {/* Central Content Stage */}
-      <main className="relative z-20 flex-1 max-w-6xl w-full mx-auto p-4 sm:p-6 md:p-10 space-y-12">
+      <main className="relative z-20 flex-1 max-w-6xl w-full mx-auto p-2.5 sm:p-6 md:p-10 space-y-6 sm:space-y-12">
         {/* Stage Container */}
-        <div className="relative rounded-lg p-6 sm:p-8 md:p-12 bg-walnut/90 border border-brass/40 shadow-2xl space-y-12 overflow-hidden">
+        <div className="relative rounded-lg p-3.5 sm:p-8 md:p-12 bg-walnut/90 border border-brass/40 shadow-2xl space-y-6 sm:space-y-12 overflow-hidden">
           {/* Subtle Leather Texture */}
           <div className="absolute inset-0 opacity-15 mix-blend-multiply pointer-events-none">
             <Picture assetKey="leatherGrain" className="w-full h-full object-cover" />
           </div>
 
           {/* Section A: Profile Card */}
-          <section aria-labelledby="passport-heading" className="relative z-10 flex flex-col md:flex-row items-center gap-8 bg-parchment text-ink p-6 md:p-8 rounded shadow-card border border-brass/50 overflow-hidden">
+          <section aria-labelledby="passport-heading" className="relative z-10 flex flex-col md:flex-row items-center gap-4 sm:gap-8 bg-parchment text-ink p-4 sm:p-6 md:p-8 rounded shadow-card border border-brass/50 overflow-hidden">
             {/* Parchment background layer */}
             <div className="absolute inset-0 opacity-20 mix-blend-multiply pointer-events-none">
               <Picture assetKey="parchment" className="w-full h-full object-cover" />
             </div>
 
             {/* Brass Corner Accents */}
-            <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-brass/70 pointer-events-none" />
-            <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-brass/70 pointer-events-none" />
-            <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-brass/70 pointer-events-none" />
-            <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-brass/70 pointer-events-none" />
+            <div className="absolute top-2 left-2 w-3.5 h-3.5 border-t-2 border-l-2 border-brass/70 pointer-events-none" />
+            <div className="absolute top-2 right-2 w-3.5 h-3.5 border-t-2 border-r-2 border-brass/70 pointer-events-none" />
+            <div className="absolute bottom-2 left-2 w-3.5 h-3.5 border-b-2 border-l-2 border-brass/70 pointer-events-none" />
+            <div className="absolute bottom-2 right-2 w-3.5 h-3.5 border-b-2 border-r-2 border-brass/70 pointer-events-none" />
 
             {/* Profile Photo */}
-            <div className="relative w-36 h-44 sm:w-44 sm:h-52 shrink-0 rounded overflow-hidden border-2 border-brass shadow-md bg-walnut/20">
+            <div className="relative w-28 h-36 sm:w-44 sm:h-52 shrink-0 rounded overflow-hidden border-2 border-brass shadow-md bg-walnut/20 mx-auto md:mx-0">
               <Picture assetKey="profile" className="w-full h-full object-cover object-top" />
             </div>
 
             {/* Identity Details */}
-            <div className="flex-1 space-y-3 text-left">
-              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-brass/40 pb-2">
-                <span className="font-mono text-xs uppercase tracking-widest text-brass font-bold">
+            <div className="flex-1 space-y-2 sm:space-y-3 text-left w-full">
+              <div className="flex flex-wrap items-center justify-between gap-1.5 border-b border-brass/40 pb-2">
+                <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-brass font-bold">
                   ENSA OUJDA · MGSI
                 </span>
-                <span className="font-mono text-xs px-2.5 py-0.5 rounded bg-oxblood/15 text-oxblood font-bold border border-oxblood/30">
+                <span className="font-mono text-[10px] sm:text-xs px-2 py-0.5 rounded bg-oxblood/15 text-oxblood font-bold border border-oxblood/30">
                   ENGINEERING
                 </span>
               </div>
 
               <div>
-                <h2 id="passport-heading" className="font-cormorant text-3xl sm:text-4xl font-bold text-ink">
+                <h2 id="passport-heading" className="font-cormorant text-2xl sm:text-3xl md:text-4xl font-bold text-ink leading-tight">
                   {OWNER.fullName}
                 </h2>
-                <p className="font-mono text-sm uppercase tracking-wider text-cognac font-semibold">
+                <p className="font-mono text-xs sm:text-sm uppercase tracking-wider text-cognac font-semibold">
                   @{OWNER.handle}
                 </p>
               </div>
 
-              <div className="font-serif text-base sm:text-lg text-ink/90 font-medium">
+              <div className="font-serif text-sm sm:text-base md:text-lg text-ink/90 font-medium">
                 {OWNER.title}
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono pt-2 text-ink/75 border-t border-brass/20">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono pt-2 text-ink/75 border-t border-brass/20">
                 <div>
                   <span className="text-brass font-semibold">STATUS:</span> 3rd Year Engineering Student
                 </div>
@@ -115,53 +116,53 @@ export const AboutScene: React.FC<AboutSceneProps> = ({ onBackToStudy }) => {
           </section>
 
           {/* Section B: Bio */}
-          <section aria-labelledby="ledger-heading" className="relative z-10 bg-parchment text-ink p-6 md:p-8 rounded shadow-card border border-brass/40">
+          <section aria-labelledby="ledger-heading" className="relative z-10 bg-parchment text-ink p-4 sm:p-6 md:p-8 rounded shadow-card border border-brass/40">
             <div className="absolute inset-0 opacity-20 mix-blend-multiply pointer-events-none">
               <Picture assetKey="parchment" className="w-full h-full object-cover" />
             </div>
 
-            <div className="relative z-10 space-y-4">
-              <div className="flex items-center gap-2 border-b border-brass/30 pb-3">
+            <div className="relative z-10 space-y-3 sm:space-y-4">
+              <div className="flex items-center gap-2 border-b border-brass/30 pb-2.5">
                 <FileText className="w-4 h-4 text-brass" />
                 <h3 id="ledger-heading" className="font-mono text-xs uppercase tracking-widest text-brass font-bold">
                   ABOUT ME
                 </h3>
               </div>
 
-              <p className="font-serif text-lg md:text-xl text-ink leading-relaxed">
+              <p className="font-serif text-base sm:text-lg md:text-xl text-ink leading-relaxed">
                 {OWNER.bioParagraph1}
               </p>
 
-              <p className="font-serif text-lg md:text-xl text-ink leading-relaxed">
+              <p className="font-serif text-base sm:text-lg md:text-xl text-ink leading-relaxed">
                 {OWNER.bioParagraph2}
               </p>
             </div>
           </section>
 
           {/* Section C: "Bridging Two Worlds" Visual */}
-          <section aria-labelledby="bridging-heading" className="relative z-10 space-y-6">
+          <section aria-labelledby="bridging-heading" className="relative z-10 space-y-4 sm:space-y-6">
             <div className="text-center">
-              <h3 id="bridging-heading" className="font-cormorant text-2xl sm:text-3xl font-bold text-parchment">
+              <h3 id="bridging-heading" className="font-cormorant text-xl sm:text-2xl md:text-3xl font-bold text-parchment">
                 Bridging Governance &amp; Defense
               </h3>
             </div>
 
-            <div className="relative flex flex-col md:flex-row items-stretch justify-between gap-6 pt-2">
+            <div className="relative flex flex-col md:flex-row items-stretch justify-between gap-4 sm:gap-6 pt-1 sm:pt-2">
               {/* Card 1: Governance */}
-              <div className="flex-1 bg-walnut/90 text-parchment p-6 rounded border-2 border-brass/50 shadow-lg space-y-3">
-                <div className="flex items-center gap-2 text-brass font-mono text-xs uppercase tracking-wider font-bold">
-                  <Compass className="w-4 h-4" />
+              <div className="flex-1 bg-walnut/90 text-parchment p-4 sm:p-6 rounded border-2 border-brass/50 shadow-lg space-y-2 sm:space-y-3">
+                <div className="flex items-center gap-2 text-brass font-mono text-[10px] sm:text-xs uppercase tracking-wider font-bold">
+                  <Compass className="w-3.5 h-3.5" />
                   <span>Governance &amp; Modeling</span>
                 </div>
-                <h4 className="font-cormorant text-xl font-bold text-parchment-light">
+                <h4 className="font-cormorant text-lg sm:text-xl font-bold text-parchment-light">
                   Risk &amp; Architecture
                 </h4>
-                <p className="text-sm text-parchment/80 font-serif">
+                <p className="text-xs sm:text-sm text-parchment/80 font-serif leading-relaxed">
                   Designing structured systems, risk management (ISO 27005 / EBIOS RM), and compliance alignment.
                 </p>
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {['UML 2.5', 'Merise', 'SAP PowerDesigner', 'Risk & Compliance', 'IT Project Management', 'ISO 27001'].map((item, idx) => (
-                    <span key={idx} className="px-2.5 py-1 rounded bg-deep-wood/80 text-brass-light font-mono text-xs border border-brass/30">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-1 sm:pt-2">
+                  {['UML 2.5', 'Merise', 'PowerDesigner', 'Risk & Compliance', 'IT Project Management', 'ISO 27001'].map((item, idx) => (
+                    <span key={idx} className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-deep-wood/80 text-brass-light font-mono text-[10px] sm:text-xs border border-brass/30">
                       {item}
                     </span>
                   ))}
@@ -169,41 +170,41 @@ export const AboutScene: React.FC<AboutSceneProps> = ({ onBackToStudy }) => {
               </div>
 
               {/* Connecting Brass Chain / Line labeled secbymorchid */}
-              <div className="relative flex flex-col md:flex-row items-center justify-center py-2 md:py-0 md:px-4">
+              <div className="relative flex flex-col items-center justify-center py-1 sm:py-2 md:py-0 md:px-4">
                 <div className="relative flex items-center justify-center">
                   <motion.div
                     initial={{ scaleX: prefersReduced ? 1 : 0 }}
                     animate={{ scaleX: 1 }}
                     transition={{ duration: prefersReduced ? 0.2 : 1.2, ease: [0.4, 0.0, 0.2, 1.0] }}
-                    className="hidden md:block w-32 h-[3px] bg-gradient-to-r from-brass via-brass-light to-brass origin-left shadow-brass"
+                    className="hidden md:block w-24 lg:w-32 h-[3px] bg-gradient-to-r from-brass via-brass-light to-brass origin-left shadow-brass"
                   />
-                  <div className="px-3 py-1.5 rounded-full bg-deep-wood border-2 border-brass text-brass-light font-mono text-xs tracking-wider uppercase font-bold shadow-brass z-10 shrink-0">
+                  <div className="px-3 py-1 rounded-full bg-deep-wood border-2 border-brass text-brass-light font-mono text-[11px] sm:text-xs tracking-wider uppercase font-bold shadow-brass z-10 shrink-0">
                     secbymorchid
                   </div>
                   <motion.div
                     initial={{ scaleX: prefersReduced ? 1 : 0 }}
                     animate={{ scaleX: 1 }}
                     transition={{ duration: prefersReduced ? 0.2 : 1.2, ease: [0.4, 0.0, 0.2, 1.0] }}
-                    className="hidden md:block w-32 h-[3px] bg-gradient-to-r from-brass via-brass-light to-brass origin-left shadow-brass"
+                    className="hidden md:block w-24 lg:w-32 h-[3px] bg-gradient-to-r from-brass via-brass-light to-brass origin-left shadow-brass"
                   />
                 </div>
               </div>
 
               {/* Card 2: Defense */}
-              <div className="flex-1 bg-walnut/90 text-parchment p-6 rounded border-2 border-brass/50 shadow-lg space-y-3">
-                <div className="flex items-center gap-2 text-brass font-mono text-xs uppercase tracking-wider font-bold">
-                  <Shield className="w-4 h-4" />
+              <div className="flex-1 bg-walnut/90 text-parchment p-4 sm:p-6 rounded border-2 border-brass/50 shadow-lg space-y-2 sm:space-y-3">
+                <div className="flex items-center gap-2 text-brass font-mono text-[10px] sm:text-xs uppercase tracking-wider font-bold">
+                  <Shield className="w-3.5 h-3.5" />
                   <span>Security Operations</span>
                 </div>
-                <h4 className="font-cormorant text-xl font-bold text-parchment-light">
+                <h4 className="font-cormorant text-lg sm:text-xl font-bold text-parchment-light">
                   Hands-on Tooling &amp; Defense
                 </h4>
-                <p className="text-sm text-parchment/80 font-serif">
+                <p className="text-xs sm:text-sm text-parchment/80 font-serif leading-relaxed">
                   Engineering detection pipelines, deception environments, and automated network auditors.
                 </p>
-                <div className="flex flex-wrap gap-2 pt-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-1 sm:pt-2">
                   {['Python', 'Bash / Linux', 'SQLite', 'Honeypots', 'Network Auditing', 'Threat Intel'].map((item, idx) => (
-                    <span key={idx} className="px-2.5 py-1 rounded bg-deep-wood/80 text-brass-light font-mono text-xs border border-brass/30">
+                    <span key={idx} className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-deep-wood/80 text-brass-light font-mono text-[10px] sm:text-xs border border-brass/30">
                       {item}
                     </span>
                   ))}
@@ -220,19 +221,19 @@ export const AboutScene: React.FC<AboutSceneProps> = ({ onBackToStudy }) => {
               </h3>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-6">
               {SKILL_CATEGORIES.map((category, catIdx) => (
-                <div key={catIdx} className="bg-walnut/70 border border-brass/40 p-5 rounded-md space-y-3 shadow-md">
-                  <div className="flex items-center gap-2 text-brass font-mono text-xs font-bold uppercase tracking-wider border-b border-brass/20 pb-2">
-                    <Cpu className="w-4 h-4" />
+                <div key={catIdx} className="bg-walnut/70 border border-brass/40 p-3.5 sm:p-5 rounded-md space-y-2.5 sm:space-y-3 shadow-md">
+                  <div className="flex items-center gap-2 text-brass font-mono text-[10px] sm:text-xs font-bold uppercase tracking-wider border-b border-brass/20 pb-2">
+                    <Cpu className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     <span>{category.category}</span>
                   </div>
 
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {category.skills.map((skill, sIdx) => (
                       <span
                         key={sIdx}
-                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-sm bg-deep-wood text-parchment-light font-mono text-xs border border-brass/30 shadow-xs hover:border-brass hover:text-white transition-colors"
+                        className="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-sm bg-deep-wood text-parchment-light font-mono text-[11px] sm:text-xs border border-brass/30 shadow-xs hover:border-brass hover:text-white transition-colors"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-brass shrink-0" />
                         <span>{skill}</span>
@@ -245,31 +246,31 @@ export const AboutScene: React.FC<AboutSceneProps> = ({ onBackToStudy }) => {
           </section>
 
           {/* Section E: Education */}
-          <section aria-labelledby="education-heading" className="relative z-10 space-y-6">
+          <section aria-labelledby="education-heading" className="relative z-10 space-y-4 sm:space-y-6">
             <div className="text-left border-b border-brass/30 pb-2">
-              <h3 id="education-heading" className="font-cormorant text-2xl sm:text-3xl font-bold text-parchment">
+              <h3 id="education-heading" className="font-cormorant text-xl sm:text-2xl md:text-3xl font-bold text-parchment">
                 Education
               </h3>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {EDUCATION_TIMELINE.map((item, idx) => (
                 <div
                   key={idx}
-                  className="p-5 rounded border-l-4 border-brass bg-walnut/70 text-parchment space-y-2"
+                  className="p-3.5 sm:p-5 rounded border-l-4 border-brass bg-walnut/70 text-parchment space-y-1.5 sm:space-y-2"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                    <h4 className="font-cormorant text-xl font-bold text-parchment">
+                    <h4 className="font-cormorant text-lg sm:text-xl font-bold text-parchment">
                       {item.institution}
                     </h4>
                     <span className="font-mono text-xs text-brass-light font-semibold">
                       {item.period}
                     </span>
                   </div>
-                  <div className="font-serif italic text-base text-parchment/85">
+                  <div className="font-serif italic text-sm sm:text-base text-parchment/85">
                     {item.degree} — {item.location}
                   </div>
-                  <p className="font-serif text-sm text-parchment/75">
+                  <p className="font-serif text-xs sm:text-sm text-parchment/75 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -278,24 +279,24 @@ export const AboutScene: React.FC<AboutSceneProps> = ({ onBackToStudy }) => {
           </section>
 
           {/* Section F: Frameworks */}
-          <section aria-labelledby="frameworks-heading" className="relative z-10 space-y-6">
+          <section aria-labelledby="frameworks-heading" className="relative z-10 space-y-4 sm:space-y-6">
             <div className="text-left border-b border-brass/30 pb-2 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
               <div>
-                <h3 id="frameworks-heading" className="font-cormorant text-2xl sm:text-3xl font-bold text-parchment">
+                <h3 id="frameworks-heading" className="font-cormorant text-xl sm:text-2xl md:text-3xl font-bold text-parchment">
                   Frameworks &amp; Standards
                 </h3>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 sm:gap-4">
               {FRAMEWORKS_TRAY.map((fw, idx) => (
                 <div
                   key={idx}
-                  className="bg-walnut/70 border border-brass/40 p-4 rounded space-y-2 hover:border-brass transition-colors shadow-sm"
+                  className="bg-walnut/70 border border-brass/40 p-3 sm:p-4 rounded space-y-1.5 sm:space-y-2 hover:border-brass transition-colors shadow-sm"
                 >
-                  <div className="font-mono font-bold text-sm text-brass-light flex items-center justify-between">
+                  <div className="font-mono font-bold text-xs sm:text-sm text-brass-light flex items-center justify-between">
                     <span>{fw.name}</span>
-                    <span className="w-2 h-2 rounded-full bg-brass/60" />
+                    <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brass/60" />
                   </div>
                   <p className="font-serif text-xs text-parchment/80">
                     {fw.domain}

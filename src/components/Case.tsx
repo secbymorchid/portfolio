@@ -75,7 +75,7 @@ export const Case: React.FC<CaseProps> = ({
     >
       {/* 3D Briefcase Container */}
       <div
-        className="relative w-72 sm:w-80 md:w-88 lg:w-96 aspect-[4/3] rounded-md overflow-hidden bg-transparent drop-shadow-[0_20px_25px_rgba(0,0,0,0.7)]"
+        className="relative w-[250px] xs:w-[270px] sm:w-72 md:w-64 lg:w-72 xl:w-80 aspect-[4/3] rounded-md overflow-hidden bg-transparent drop-shadow-[0_20px_25px_rgba(0,0,0,0.7)]"
         style={{ perspective: prefersReduced ? 'none' : '1200px' }}
       >
         {/* Closed Case Image */}

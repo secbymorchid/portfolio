@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Picture } from '../components/common/Picture';
 import { ParallaxLayer } from '../components/common/ParallaxLayer';
@@ -10,14 +10,12 @@ interface IntroSceneProps {
 
 export const IntroScene: React.FC<IntroSceneProps> = ({ onPowerOn }) => {
   const prefersReduced = usePrefersReducedMotion();
-  const powerSwitchRef = useRef<HTMLButtonElement>(null);
 
-  // Lock body scroll and focus power switch
+  // Lock body scroll during intro
   useEffect(() => {
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     window.scrollTo(0, 0);
-    powerSwitchRef.current?.focus();
     return () => {
       document.body.style.overflow = prevOverflow;
     };
@@ -43,7 +41,7 @@ export const IntroScene: React.FC<IntroSceneProps> = ({ onPowerOn }) => {
 
           {/* Lamp Warm Radial Glow with Low-Amplitude Flicker */}
           <div
-            className="absolute top-[18%] left-[26%] w-[420px] h-[420px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 lamp-glow-anim"
+            className="absolute top-[18%] left-[26%] w-[320px] sm:w-[420px] h-[320px] sm:h-[420px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 lamp-glow-anim"
             style={{
               background: 'radial-gradient(circle, rgba(255, 190, 90, 0.38) 0%, rgba(217, 140, 50, 0.18) 45%, transparent 75%)',
             }}
@@ -60,10 +58,10 @@ export const IntroScene: React.FC<IntroSceneProps> = ({ onPowerOn }) => {
           initial={{ opacity: 0, scale: prefersReduced ? 1 : 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: prefersReduced ? 0.3 : 1.2, ease: [0.4, 0.0, 0.2, 1.0] }}
-          className="relative flex flex-col items-center w-full max-w-lg md:max-w-2xl px-2"
+          className="relative flex flex-col items-center w-full max-w-[340px] sm:max-w-lg md:max-w-2xl px-2"
         >
           {/* Clickable Computer Frame */}
-          <div className="relative group w-full max-w-[320px] sm:max-w-[460px] md:max-w-[580px] lg:max-w-[680px] mx-auto">
+          <div className="relative group w-full max-w-[300px] sm:max-w-[460px] md:max-w-[580px] lg:max-w-[680px] mx-auto active:scale-[0.98] transition-transform">
             <Picture
               assetKey="ibmComputer"
               priority={true}
@@ -72,13 +70,12 @@ export const IntroScene: React.FC<IntroSceneProps> = ({ onPowerOn }) => {
 
             {/* Interactive Hotspot over the entire computer & power switch */}
             <button
-              ref={powerSwitchRef}
               type="button"
               role="button"
               aria-label="Power on the computer to initialize Morchid Systems BIOS"
               onClick={onPowerOn}
               onKeyDown={handleKeyDown}
-              className="absolute inset-0 w-full h-full cursor-pointer rounded-lg outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-brass-light focus-visible:ring-offset-4 focus-visible:ring-offset-deep-wood"
+              className="absolute inset-0 w-full h-full cursor-pointer rounded-lg outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-brass-light"
             >
               {/* Power Switch Area Red LED Indicator with 3s Idle Pulse aligned precisely on the monitor power toggle */}
               <div
@@ -94,12 +91,12 @@ export const IntroScene: React.FC<IntroSceneProps> = ({ onPowerOn }) => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="mt-4 sm:mt-6 flex flex-col items-center text-center px-2 cursor-pointer"
+            className="mt-4 sm:mt-6 flex flex-col items-center text-center px-2 cursor-pointer active:scale-95 transition-transform"
             onClick={onPowerOn}
           >
-            <div className="px-3.5 py-1.5 sm:px-5 sm:py-2 rounded-sm border border-brass/50 bg-deep-wood/85 backdrop-blur-xs shadow-brass flex items-center gap-2 max-w-[90vw] hover:border-brass transition-colors">
+            <div className="px-3 py-1.5 sm:px-5 sm:py-2 rounded-sm border border-brass/50 bg-deep-wood/85 backdrop-blur-xs shadow-brass flex items-center gap-2 max-w-[92vw] hover:border-brass transition-colors">
               <span className="w-2 h-2 rounded-full bg-red-500 led-pulse shrink-0" />
-              <p className="font-cormorant font-semibold text-base sm:text-lg md:text-xl text-parchment tracking-wide">
+              <p className="font-cormorant font-semibold text-sm sm:text-lg md:text-xl text-parchment tracking-wide">
                 Press the power switch to begin
               </p>
             </div>

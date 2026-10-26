@@ -212,7 +212,7 @@ export const Terminal: React.FC<TerminalProps> = ({ onComplete, onNavigate }) =>
   return (
     <div
       ref={containerRef}
-      className="relative flex-1 min-h-0 w-full p-4 sm:p-6 md:p-8 font-mono text-phosphor text-xs sm:text-sm md:text-base leading-relaxed overflow-y-auto select-none crt-scanlines"
+      className="relative flex-1 min-h-0 w-full p-3 sm:p-6 md:p-8 font-mono text-phosphor text-[11px] sm:text-sm md:text-base leading-relaxed overflow-y-auto select-none crt-scanlines"
       onClick={() => inputRef.current?.focus()}
     >
       <div className="space-y-1.5 crt-flicker-anim max-w-full break-words">
@@ -261,13 +261,13 @@ export const Terminal: React.FC<TerminalProps> = ({ onComplete, onNavigate }) =>
             </div>
 
             {/* Quick interactive action pill for mobile/click */}
-            <div className="mt-3 pt-2 border-t border-phosphor/20 flex items-center justify-between text-[11px] sm:text-xs text-phosphor/80">
+            <div className="mt-3 pt-2 border-t border-phosphor/20 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] sm:text-xs text-phosphor/80">
               <button
                 type="button"
                 onClick={handleManualTrigger}
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded border border-phosphor/50 bg-phosphor/10 hover:bg-phosphor/20 text-phosphor font-mono tracking-wider transition-colors cursor-pointer"
+                className="w-full sm:w-auto text-center justify-center inline-flex items-center gap-1.5 px-4 py-2 sm:py-1 rounded border border-phosphor/60 bg-phosphor/15 hover:bg-phosphor/25 active:bg-phosphor/35 text-phosphor font-mono text-xs sm:text-sm tracking-wider transition-colors cursor-pointer"
               >
-                <span>⏎ Press Enter or Click to Enter Study</span>
+                <span>⏎ Tap to Enter Study</span>
               </button>
               <span className="text-phosphor/60 hidden sm:inline">
                 Command: <code className="text-phosphor">open study</code>

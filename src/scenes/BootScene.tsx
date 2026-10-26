@@ -40,23 +40,23 @@ export const BootScene: React.FC<BootSceneProps> = ({ onComplete, onNavigate }) 
 
       {/* CRT Monitor Enclosure & Screen Area */}
       <motion.div
-        className="relative z-10 w-full max-w-3xl h-[min(86vh,540px)] flex flex-col items-center justify-center"
+        className="relative z-10 w-full max-w-3xl h-[min(88vh,560px)] flex flex-col items-center justify-center px-1 sm:px-0"
         initial={{ scale: prefersReduced ? 1 : 0.85, opacity: 0.85 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: prefersReduced ? 0.3 : 0.9, ease: [0.4, 0.0, 0.2, 1.0] }}
       >
         {/* Vintage IBM 5151 CRT Bezel Frame */}
-        <div className="relative w-full h-full bg-[#1e1a15] rounded-xl p-3 sm:p-5 shadow-[0_0_80px_rgba(0,0,0,0.95)] border-4 border-[#3a3228] flex flex-col box-border">
+        <div className="relative w-full h-full bg-[#1e1a15] rounded-xl p-2.5 sm:p-5 shadow-[0_0_80px_rgba(0,0,0,0.95)] border-3 sm:border-4 border-[#3a3228] flex flex-col box-border">
           {/* Top monitor branding */}
-          <div className="flex items-center justify-between pb-2 px-2 border-b border-[#352f26] text-[11px] font-mono text-[#a89678] uppercase tracking-widest shrink-0">
-            <div className="flex items-center gap-2">
+          <div className="flex items-center justify-between pb-1.5 sm:pb-2 px-1 sm:px-2 border-b border-[#352f26] text-[10px] sm:text-[11px] font-mono text-[#a89678] uppercase tracking-wider shrink-0">
+            <div className="flex items-center gap-1.5 sm:gap-2 truncate mr-2">
               <span className="font-bold text-parchment/90">IBM 5151</span>
               <span className="text-[#655848]">|</span>
-              <span>MORCHID SYSTEMS 5150</span>
+              <span>MORCHID BIOS</span>
             </div>
-            <span className="flex items-center gap-1.5 text-phosphor">
-              <span className="w-2 h-2 rounded-full bg-phosphor animate-pulse" />
-              ONLINE · PHOSPHOR P1
+            <span className="flex items-center gap-1.5 text-phosphor shrink-0">
+              <span className="w-1.5 h-1.5 rounded-full bg-phosphor animate-pulse" />
+              ONLINE
             </span>
           </div>
 
